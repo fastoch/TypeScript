@@ -32,7 +32,7 @@ const showReviewTotal = (x, name, loyalty) => {
 };
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 const you = {
-    userName: { firstName: 'Bobby', lastName: 'Brown' },
+    userName: { firstName: 'Fabrice', lastName: 'Pustoc\'h' },
     isReturning: true
 };
 const populateUser = (isReturning, firstName, lastName) => {
