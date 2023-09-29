@@ -1,8 +1,22 @@
+// Variables and functions
+const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
 const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
 const userNameDisplay = document.querySelector('#user') as HTMLElement
-const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
 
-// this is an array of objects
+const showReviewTotal = (value: number, reviewer: string, isLoyalty: boolean) => {
+    const iconDisplay = isLoyalty ? ' ⭐' : ''
+    reviewTotalDisplay.innerHTML = 'Review Total = ' + value.toString() + ' | Last reviewed by ' + reviewer + ' ' + iconDisplay
+}
+
+const populateUser = (isReturning : boolean, firstName: string, lastName: string) => {
+    if (isReturning == true){
+        returningUserDisplay.innerHTML = ' back'
+    }
+    userNameDisplay.innerHTML = `${firstName} ${lastName}!`
+}
+
+
+// This is an array of objects
 const reviews: {
   name: string, 
   stars: number, 
@@ -29,14 +43,6 @@ const reviews: {
   },
 ]
 
-// Solution
-const showReviewTotal = (x: number, name: string, loyalty: boolean) => {
-  reviewTotalDisplay.innerHTML = 'Review total = ' + x.toString() + ' | last reviewed by ' + name
-  if (loyalty) {
-    reviewTotalDisplay.innerHTML += ' ⭐'
-  }
-}
-
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 const you: {
@@ -51,13 +57,6 @@ const you: {
   age: 41,
   isReturning: true,
   stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
-}
-
-const populateUser = (isReturning: boolean, firstName: string, lastName: string) => {
-  if (isReturning) {
-    returningUserDisplay.innerHTML = ' back '
-  }
-  userNameDisplay.innerHTML = `${firstName} ${lastName}!`
 }
 
 populateUser(you.isReturning, you.firstName, you.lastName)

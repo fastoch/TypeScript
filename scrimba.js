@@ -1,8 +1,19 @@
 "use strict";
+// Variables and functions
+const reviewTotalDisplay = document.querySelector('#reviews');
 const returningUserDisplay = document.querySelector('#returning-user');
 const userNameDisplay = document.querySelector('#user');
-const reviewTotalDisplay = document.querySelector('#reviews');
-// this is an array of objects
+const showReviewTotal = (value, reviewer, isLoyalty) => {
+    const iconDisplay = isLoyalty ? ' ⭐' : '';
+    reviewTotalDisplay.innerHTML = 'Review Total = ' + value.toString() + ' | Last reviewed by ' + reviewer + ' ' + iconDisplay;
+};
+const populateUser = (isReturning, firstName, lastName) => {
+    if (isReturning == true) {
+        returningUserDisplay.innerHTML = ' back';
+    }
+    userNameDisplay.innerHTML = `${firstName} ${lastName}!`;
+};
+// This is an array of objects
 const reviews = [
     {
         name: 'Sheena',
@@ -23,13 +34,6 @@ const reviews = [
         date: '27-03-2021'
     },
 ];
-// Solution
-const showReviewTotal = (x, name, loyalty) => {
-    reviewTotalDisplay.innerHTML = 'Review total = ' + x.toString() + ' | last reviewed by ' + name;
-    if (loyalty) {
-        reviewTotalDisplay.innerHTML += ' ⭐';
-    }
-};
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 const you = {
     firstName: 'Fabrice',
@@ -37,11 +41,5 @@ const you = {
     age: 41,
     isReturning: true,
     stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
-};
-const populateUser = (isReturning, firstName, lastName) => {
-    if (isReturning) {
-        returningUserDisplay.innerHTML = ' back ';
-    }
-    userNameDisplay.innerHTML = `${firstName} ${lastName}!`;
 };
 populateUser(you.isReturning, you.firstName, you.lastName);
