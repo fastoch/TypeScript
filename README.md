@@ -1,1 +1,1 @@
-# Leanring TypeScript on Scrimba.com
+# Learning TypeScript on Scrimba.com
