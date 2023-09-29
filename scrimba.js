@@ -5,19 +5,19 @@ const reviewTotalDisplay = document.querySelector('#reviews');
 // this is an array of objects
 const reviews = [
     {
-        name: 'Sheia',
+        name: 'Sheena',
         stars: 5,
         loyaltyUser: true,
         date: '01-04-2021'
     },
     {
-        name: 'Andrzej',
+        name: 'Charles',
         stars: 3,
         loyaltyUser: false,
         date: '28-03-2021'
     },
     {
-        name: 'Omar',
+        name: 'Laura',
         stars: 4,
         loyaltyUser: true,
         date: '27-03-2021'
@@ -35,7 +35,8 @@ const you = {
     firstName: 'Fabrice',
     lastName: 'Pustoc\'h',
     age: 41,
-    isReturning: true
+    isReturning: true,
+    stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
 };
 const populateUser = (isReturning, firstName, lastName) => {
     if (isReturning) {
