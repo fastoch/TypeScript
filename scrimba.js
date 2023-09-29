@@ -32,7 +32,9 @@ const showReviewTotal = (x, name, loyalty) => {
 };
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 const you = {
-    userName: { firstName: 'Fabrice', lastName: 'Pustoc\'h' },
+    firstName: 'Fabrice',
+    lastName: 'Pustoc\'h',
+    age: 41,
     isReturning: true
 };
 const populateUser = (isReturning, firstName, lastName) => {
@@ -41,4 +43,4 @@ const populateUser = (isReturning, firstName, lastName) => {
     }
     userNameDisplay.innerHTML = `${firstName} ${lastName}!`;
 };
-populateUser(you.isReturning, you.userName.firstName, you.userName.lastName);
+populateUser(you.isReturning, you.firstName, you.lastName);

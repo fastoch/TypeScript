@@ -34,8 +34,15 @@ const showReviewTotal = (x: number, name: string, loyalty: boolean) => {
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
-const you = {
-  userName: {firstName: 'Fabrice', lastName: 'Pustoc\'h'},
+const you: {
+  firstName: string,
+  lastName: string,
+  age: number,
+  isReturning: boolean
+} = {
+  firstName: 'Fabrice',
+  lastName: 'Pustoc\'h',
+  age: 41,
   isReturning: true
 }
 
@@ -46,5 +53,5 @@ const populateUser = (isReturning: boolean, firstName: string, lastName: string)
   userNameDisplay.innerHTML = `${firstName} ${lastName}!`
 }
 
-populateUser(you.isReturning, you.userName.firstName, you.userName.lastName)
+populateUser(you.isReturning, you.firstName, you.lastName)
 
