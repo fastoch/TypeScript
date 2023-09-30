@@ -59,5 +59,60 @@ const you: {
   stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
 }
 
+// Properties (another array of objects)
+const properties: {
+  image: string,
+  title: string,
+  price: number,
+  location: {
+    firstLine: string,
+    city: string,
+    zipCode: number,
+    country: string,
+  },
+  contact: string,
+  isAvailable: boolean
+}[] = [
+  {
+    image: '',
+    title: 'colombian shack',
+    price: 45,
+    location: {
+      firstLine: 'shack 37',
+      city: 'Bogota',
+      zipCode: 45632,
+      country: 'Colombia',
+    },
+    contact: 'marywinkle@gmail.com',
+    isAvailable: true
+  },
+  {
+    image: '',
+    title: 'polish cottage',
+    price: 34,
+    location: {
+      firstLine: 'n°23',
+      city: 'Gdansk',
+      zipCode: 343903,
+      country: 'Poland',
+    },
+    contact: 'garydavis@hotmail.com',
+    isAvailable: false
+  },
+  {
+    image: '',
+    title: 'London flat',
+    price: 23,
+    location: {
+      firstLine: 'flat 15',
+      city: 'London',
+      zipCode: 35433,
+      country: 'England',
+    },
+    contact: 'andyluger@aol.com',
+    isAvailable: true
+  },
+]
+
 populateUser(you.isReturning, you.firstName, you.lastName)
 
