@@ -129,13 +129,6 @@ for (let i = 0; i < properties.length; i++) {
   propertyContainer.appendChild(card)
 }
 
-let currentLocation: [string, string, string] = ['Avignon', '16:32', '26°C' ]
-for (let i = 0; i < currentLocation.length; i++) {
-  if (i < currentLocation.length - 1) {
-    footer.innerHTML += currentLocation[i] + ' | '
-  } else {
-    footer.innerHTML += currentLocation[i]
-  }
-  // The if else is there to avoid putting a pipe at the end
-}
+let currentLocation: [string, string, number] = ['France', '19:53', 25]
+footer.innerHTML = currentLocation[0] + ' | ' + currentLocation[1] + ' | ' + currentLocation[2] + '°C'
 
