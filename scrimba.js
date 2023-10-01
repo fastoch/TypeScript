@@ -56,7 +56,7 @@ const properties = [
             zipCode: 45632,
             country: 'Colombia',
         },
-        contact: 'marywinkle@gmail.com',
+        contact: [+999555666, 'marywinkle@gmail.com'],
         isAvailable: true
     },
     {
@@ -69,7 +69,7 @@ const properties = [
             zipCode: 343903,
             country: 'Poland',
         },
-        contact: 'garydavis@hotmail.com',
+        contact: [+111222333, 'garydavis@hotmail.com'],
         isAvailable: false
     },
     {
@@ -82,7 +82,7 @@ const properties = [
             zipCode: 35433,
             country: 'England',
         },
-        contact: 'andyluger@aol.com',
+        contact: [+444777888, 'andyluger@aol.com'],
         isAvailable: true
     },
 ];
