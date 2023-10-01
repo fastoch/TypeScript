@@ -2,6 +2,7 @@
 const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
 const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
 const userNameDisplay = document.querySelector('#user') as HTMLElement
+const propertyContainer = document.querySelector('.properties') as HTMLElement
 
 const showReviewTotal = (value: number, reviewer: string, isLoyalty: boolean) => {
     const iconDisplay = isLoyalty ? ' ⭐' : ''
@@ -14,7 +15,6 @@ const populateUser = (isReturning : boolean, firstName: string, lastName: string
     }
     userNameDisplay.innerHTML = `${firstName} ${lastName}!`
 }
-
 
 // This is an array of objects
 const reviews: {
@@ -59,6 +59,8 @@ const you: {
   stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
 }
 
+populateUser(you.isReturning, you.firstName, you.lastName)
+
 // Properties (another array of objects)
 const properties: {
   image: string,
@@ -74,8 +76,8 @@ const properties: {
   isAvailable: boolean
 }[] = [
   {
-    image: '',
-    title: 'colombian shack',
+    image: 'images/colombia-property.jpg',
+    title: 'Colombian Shack',
     price: 45,
     location: {
       firstLine: 'shack 37',
@@ -87,8 +89,8 @@ const properties: {
     isAvailable: true
   },
   {
-    image: '',
-    title: 'polish cottage',
+    image: 'images/poland-property.jpg',
+    title: 'Polish Cottage',
     price: 34,
     location: {
       firstLine: 'n°23',
@@ -100,8 +102,8 @@ const properties: {
     isAvailable: false
   },
   {
-    image: '',
-    title: 'London flat',
+    image: 'images/london-property.jpg',
+    title: 'London Countryside',
     price: 23,
     location: {
       firstLine: 'flat 15',
@@ -114,5 +116,14 @@ const properties: {
   },
 ]
 
-populateUser(you.isReturning, you.firstName, you.lastName)
-
+// Add the properties
+for (let i = 0; i < properties.length; i++) {
+  const card = document.createElement('div')
+  card.classList.add('card')
+  card.innerHTML = properties[i].title
+  const image = document.createElement('img')
+  image.setAttribute('src', properties[i].image)
+  image.classList.add('img')
+  card.appendChild(image)
+  propertyContainer.appendChild(card)
+}

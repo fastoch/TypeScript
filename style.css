@@ -10,6 +10,9 @@ body {
 
 .container {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-bar {
@@ -30,4 +33,23 @@ body {
 
 .user-container {
   margin: 20px;
+}
+
+.properties {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  margin: 5px;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: rgb(0 0 0 / 12%) 0 1px 8px;
+}
+
+.img {
+  width: 250px;
+  height: auto;
+  /* images are inline elements */
 }

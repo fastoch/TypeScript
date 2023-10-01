@@ -3,6 +3,7 @@
 const reviewTotalDisplay = document.querySelector('#reviews');
 const returningUserDisplay = document.querySelector('#returning-user');
 const userNameDisplay = document.querySelector('#user');
+const propertyContainer = document.querySelector('.properties');
 const showReviewTotal = (value, reviewer, isLoyalty) => {
     const iconDisplay = isLoyalty ? ' ⭐' : '';
     reviewTotalDisplay.innerHTML = 'Review Total = ' + value.toString() + ' | Last reviewed by ' + reviewer + ' ' + iconDisplay;
@@ -43,3 +44,56 @@ const you = {
     stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
 };
 populateUser(you.isReturning, you.firstName, you.lastName);
+// Properties (another array of objects)
+const properties = [
+    {
+        image: 'images/colombia-property.jpg',
+        title: 'Colombian Shack',
+        price: 45,
+        location: {
+            firstLine: 'shack 37',
+            city: 'Bogota',
+            zipCode: 45632,
+            country: 'Colombia',
+        },
+        contact: 'marywinkle@gmail.com',
+        isAvailable: true
+    },
+    {
+        image: 'images/poland-property.jpg',
+        title: 'Polish Cottage',
+        price: 34,
+        location: {
+            firstLine: 'n°23',
+            city: 'Gdansk',
+            zipCode: 343903,
+            country: 'Poland',
+        },
+        contact: 'garydavis@hotmail.com',
+        isAvailable: false
+    },
+    {
+        image: 'images/london-property.jpg',
+        title: 'London Countryside',
+        price: 23,
+        location: {
+            firstLine: 'flat 15',
+            city: 'London',
+            zipCode: 35433,
+            country: 'England',
+        },
+        contact: 'andyluger@aol.com',
+        isAvailable: true
+    },
+];
+// Add the properties
+for (let i = 0; i < properties.length; i++) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = properties[i].title;
+    const image = document.createElement('img');
+    image.setAttribute('src', properties[i].image);
+    image.classList.add('img');
+    card.appendChild(image);
+    propertyContainer.appendChild(card);
+}
