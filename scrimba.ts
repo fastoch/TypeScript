@@ -3,6 +3,7 @@ const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
 const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
 const userNameDisplay = document.querySelector('#user') as HTMLElement
 const propertyContainer = document.querySelector('.properties') as HTMLElement
+const footer = document.querySelector('.footer') as HTMLElement
 
 const showReviewTotal = (value: number, reviewer: string, isLoyalty: boolean) => {
     const iconDisplay = isLoyalty ? ' ⭐' : ''
@@ -127,3 +128,14 @@ for (let i = 0; i < properties.length; i++) {
   card.appendChild(image)
   propertyContainer.appendChild(card)
 }
+
+let currentLocation: [string, string, string] = ['Avignon', '16:32', '26°C' ]
+for (let i = 0; i < currentLocation.length; i++) {
+  if (i < currentLocation.length - 1) {
+    footer.innerHTML += currentLocation[i] + ' | '
+  } else {
+    footer.innerHTML += currentLocation[i]
+  }
+  // The if else is there to avoid putting a pipe at the end
+}
+

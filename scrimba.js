@@ -4,6 +4,7 @@ const reviewTotalDisplay = document.querySelector('#reviews');
 const returningUserDisplay = document.querySelector('#returning-user');
 const userNameDisplay = document.querySelector('#user');
 const propertyContainer = document.querySelector('.properties');
+const footer = document.querySelector('.footer');
 const showReviewTotal = (value, reviewer, isLoyalty) => {
     const iconDisplay = isLoyalty ? ' ⭐' : '';
     reviewTotalDisplay.innerHTML = 'Review Total = ' + value.toString() + ' | Last reviewed by ' + reviewer + ' ' + iconDisplay;
@@ -96,4 +97,14 @@ for (let i = 0; i < properties.length; i++) {
     image.classList.add('img');
     card.appendChild(image);
     propertyContainer.appendChild(card);
+}
+let currentLocation = ['Avignon', '16:32', '26°C'];
+for (let i = 0; i < currentLocation.length; i++) {
+    if (i < currentLocation.length - 1) {
+        footer.innerHTML += currentLocation[i] + ' | ';
+    }
+    else {
+        footer.innerHTML += currentLocation[i];
+    }
+    // The if else is there to avoid putting a pipe at the end
 }
