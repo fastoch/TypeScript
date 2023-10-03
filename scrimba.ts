@@ -58,14 +58,14 @@ enum Privileges {
 const you: {
   firstName: string,
   lastName: string,
-  privileges: Privileges.ADMIN, // custom type 
+  privileges: Privileges, // custom type 
   age: number,
   isReturning: boolean,
   stayedAt: (string | number)[]
 } = {
   firstName: 'Fabrice',
   lastName: 'Pustoc\'h',
-  privileges: Privileges.ADMIN, // this property's value cannot be anything else
+  privileges: Privileges.ADMIN, // this has to be one of the 2 values provided in Privileges
   age: 41,
   isReturning: true,
   stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
