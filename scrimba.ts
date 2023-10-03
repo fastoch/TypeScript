@@ -46,15 +46,26 @@ const reviews: {
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
+// Enum Type
+const ADMIN = 'admin'
+const READ_ONLY = 'read-only'
+
+enum Privileges {
+  ADMIN,
+  READ_ONLY
+}
+
 const you: {
   firstName: string,
   lastName: string,
+  privileges: Privileges.ADMIN, // custom type 
   age: number,
   isReturning: boolean,
   stayedAt: (string | number)[]
 } = {
   firstName: 'Fabrice',
   lastName: 'Pustoc\'h',
+  privileges: Privileges.ADMIN, // this property's value cannot be anything else
   age: 41,
   isReturning: true,
   stayedAt: ['Florida-home', 'Oman-flat', 'Tokyo-bungalow', 23]
@@ -131,4 +142,6 @@ for (let i = 0; i < properties.length; i++) {
 
 let currentLocation: [string, string, number] = ['France', '19:53', 25]
 footer.innerHTML = currentLocation[0] + ' | ' + currentLocation[1] + ' | ' + currentLocation[2] + '°C'
+
+
 
